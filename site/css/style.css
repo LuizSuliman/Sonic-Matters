@@ -58,6 +58,10 @@ body {
     transition: 500ms;
 }
 
+#navbar-current {
+    text-decoration: underline;
+}
+
 .navbar-auth {
     height: 65%;
     width: 23%;

@@ -52,10 +52,12 @@ body {
     text-decoration: none;
     margin: 0 1%;
     color: #405BE9;
+    transition: 500ms;
 }
 
 .navbar a:hover {
-    color: #405BE9;
+    color: #FF7E7E;
+    transition: 500ms;
 }
 
 .navbar-auth {
@@ -97,7 +99,8 @@ body {
 }
 
 .navbar-register:hover {
-    background-color: #b80000;
+    background-color: #FFFFFF;
+    color: #FF7E7E;
     transition: 500ms;
 }
 

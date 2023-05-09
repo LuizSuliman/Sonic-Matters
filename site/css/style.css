@@ -22,6 +22,19 @@ body {
     display: flex;
 }
 
+/* SCROLL BAR */
+body::-webkit-scrollbar-track {
+    background: #405BE9;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #888;
+}
+  
+body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+ }
+
 
 /* HEADER */
 
@@ -109,17 +122,74 @@ body {
     transition: 500ms;
 }
 
+/* FOOTER */
+
+.footer {
+    height: 20%;
+    width: 100%;
+    bottom: 0;
+    background-color: #000000;
+}
+
+.footer .container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    height: 80%;
+    width: 33.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid #F5ED1E;
+}
+
+.footer-logo img {
+    height: 60%;
+}
+
+.footer-copyright {
+    width: 33.3%;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-copyright span {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-social {
+    height: 80%;
+    width: 33.3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-left: 2px solid #F5ED1E;
+}
+
+.footer-social a {
+    height: 40%;
+}
+
+.footer-social img {
+    height: 100%;
+}
+
 /* HOME */
 
-/* Vídeo de Fundo */
-.home_hero_bg_video {
+/* Vídeo de Fundo (HERO) */
+.home-hero-bg-video {
     position: fixed;
+    height: fit-content;
     width: 100%;
     z-index: -1;
 }
 
-/* Conteúdo na frente do Vídeo*/
-.home_hero_content .container {
+/* Conteúdo na frente do Vídeo */
+.home-hero-content .container {
     height: 100%;
     width: 100%;
     flex-direction: column;
@@ -129,12 +199,12 @@ body {
     /* background-image: radial-gradient(#000000, transparent) */
 }
 
-.home_hero_content {
-    height: 100%;
+.home-hero-content {
+    height: 100vh;
     width: 100%;
 }
 
-.home_hero_image {
+.home-hero-image {
     height: 25%;
     padding: 1%;
     /* background-color: #00000015; */
@@ -142,7 +212,7 @@ body {
     border-radius: 20px;
 }
 
-.home_hero_subtitle {
+.home-hero-subtitle {
     color: #FFFFFF;
     padding: 1%;
     background-color: #00000025;
@@ -150,15 +220,15 @@ body {
     border-radius: 10px;
 }
 
-.home_hero_subtitle .sonic {
+.home-hero-subtitle .sonic {
     color: #405BE9;
 }
 
-.home_hero_subtitle .the {
+.home-hero-subtitle .the {
     color: #F5ED1E;
 }
 
-.home_hero_subtitle .hedgehog {
+.home-hero-subtitle .hedgehog {
     color: #FF7E7E;
 }
 

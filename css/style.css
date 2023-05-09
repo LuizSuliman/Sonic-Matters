@@ -22,19 +22,6 @@ body {
     display: flex;
 }
 
-/* SCROLL BAR */
-body::-webkit-scrollbar-track {
-    background: #405BE9;
-}
-
-body::-webkit-scrollbar-thumb {
-    background: #888;
-}
-  
-body::-webkit-scrollbar-thumb:hover {
-    background: #555;
- }
-
 
 /* HEADER */
 

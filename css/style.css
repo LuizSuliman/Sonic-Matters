@@ -30,6 +30,9 @@ body {
     font-weight: 900;
     height: 8%;
     width: 100%;
+}
+
+.darker {
     background-image: linear-gradient(#000000, transparent);
 }
 
@@ -202,7 +205,7 @@ body {
 .home-hero-subtitle {
     color: #FFFFFF;
     padding: 1%;
-    background-color: #00000025;
+    background-color: #00000058;
     border: 2px solid #405BE9;
     border-radius: 10px;
 }
@@ -219,3 +222,30 @@ body {
     color: #FF7E7E;
 }
 
+/* QUEM É SONIC */
+
+.banner {
+    height: 350px;
+    width: 100%;
+    z-index: -1;
+    background-image: url("../assets/img/quem_e_sonic_banner.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.banner .container {
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000068;
+}
+
+.banner_text {
+    font-size: 70px;
+    font-weight: 900;
+    margin-top: 35px;
+    color: #FFFFFF;
+}

@@ -254,7 +254,7 @@ body {
 
 /* LOGIN */
 
-/* CADATRO */
+/* CADASTRO */
 
 .register {
     height: 100%;
@@ -262,6 +262,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url("../assets/img/quem_e_sonic_banner.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .close-form {
@@ -272,18 +276,33 @@ body {
 .form-image {
     height: 100%;
     width: 60%;
-    background-image: url("../assets/img/quem_e_sonic_banner.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     position: relative;
 }
 
 .form  {
     height: 100%;
     width: 40%;
+    color: #FFFFFF;
+    background-color: #000000bc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+.form h1 {
+    color: #FF7E7E;
+}
+
+.form_input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3%;
+}
+
+.link_auth {
+    margin-top: 2%;
+}
 
 /* Carregando */
 .loading-div {
@@ -294,6 +313,8 @@ body {
     width: 15%;
 }
 
+/* Erros */
+
 #div_erros_login {
     display: none
 }
@@ -301,6 +322,7 @@ body {
 .alerta_erro{
     display: flex;
     justify-content: flex-end;
+    position: absolute;
 }
 
 .card_erro {

@@ -25,19 +25,19 @@
             <h1>
                 Cadastro
             </h1>
-            <div id="form_input">
+            <div class="form_input">
                 Nome: <input id="input_nome" placeholder="Sonic The Hedgehog"> 
             </div>
-            <div id="form_input">
+            <div class="form_input">
                 Email: <input id="input_email" placeholder="sonic@eggnet.com"> 
             </div>
-            <div id="form_input">
+            <div class="form_input">
                 Senha: <input id="input_senha" placeholder="*******"> 
             </div>
-            <div id="form_input">
+            <div class="form_input">
                 Confirmar Senha: <input id="input_confirmar_senha" type="password" placeholder="*******"> 
             </div>
-            <div id="form_select">
+            <div class="form_input">
                 Personagem Favorito: 
                 <select name="personagens" id="select_personagem"> 
                     <option value="Sonic">Sonic</option>
@@ -83,13 +83,13 @@
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Preencha os campos abaixo";
+            mensagem_erro.innerHTML = "Preencha os campos ao lado!";
 
             finalizarAguardar();
             return false;
         } else if (senhaVar != confirmacaoSenhaVar) {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "A Senha e a Confirmação não são iguais";
+            mensagem_erro.innerHTML = "A Senha e a Confirmação não são iguais!";
 
             finalizarAguardar();
             return false;

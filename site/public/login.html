@@ -25,11 +25,11 @@
             <h1>
                 Login
             </h1>
-            <div id="form_input">
-                Email: <input id="input_email"> 
+            <div class="form_input">
+                Email: <input id="input_email" placeholder="sonic@eggnet.com"> 
             </div>
-            <div id="form_input">
-                Senha: <input id="input_senha" type="password"> 
+            <div class="form_input">
+                Senha: <input id="input_senha" type="password" placeholder="*******"> 
             </div>
             <button class="button-submit" onclick="entrar()">Entrar</button>
             <div class="link_auth">
@@ -52,7 +52,7 @@
 
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Preencha os campos abaixo";
+            mensagem_erro.innerHTML = "Preencha os campos ao lado!";
             finalizarAguardar();
             return false;
         }

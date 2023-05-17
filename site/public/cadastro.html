@@ -26,16 +26,16 @@
                 Cadastro
             </h1>
             <div id="form_input">
-                Nome: <input id="input_nome"> 
+                Nome: <input id="input_nome" placeholder="Sonic The Hedgehog"> 
             </div>
             <div id="form_input">
-                Email: <input id="input_email"> 
+                Email: <input id="input_email" placeholder="sonic@eggnet.com"> 
             </div>
             <div id="form_input">
-                Senha: <input id="input_senha"> 
+                Senha: <input id="input_senha" placeholder="*******"> 
             </div>
             <div id="form_input">
-                Confirmar Senha: <input id="input_confirmar_senha"> 
+                Confirmar Senha: <input id="input_confirmar_senha" type="password" placeholder="*******"> 
             </div>
             <div id="form_select">
                 Personagem Favorito: 
@@ -83,12 +83,17 @@
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            mensagem_erro.innerHTML = "Preencha os campos abaixo";
 
             finalizarAguardar();
             return false;
-        }
-        else {
+        } else if (senhaVar != confirmacaoSenhaVar) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "A Senha e a Confirmação não são iguais";
+
+            finalizarAguardar();
+            return false;
+        } else {
             setInterval(sumirMensagem, 5000)
         }
 
@@ -103,7 +108,8 @@
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
                 emailServer: emailVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
+                personagemServer: personagensVar
             })
         }).then(function (resposta) {
 

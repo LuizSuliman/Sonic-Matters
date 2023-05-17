@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro | Sonic Matters</title>
+    <title>Login | Sonic Matters</title>
     <script src="js/funcoes.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="assets/img/sonic_icon.png" type="image/x-icon">
@@ -17,13 +17,8 @@
             </a>
         </div>
         <div class="form">
-            <div class="alerta_erro">
-                <div class="card_erro" id="cardErro">
-                    <span id="mensagem_erro"></span>
-                </div>
-            </div>
             <h1>
-                Cadastro
+                Login
             </h1>
             <div id="form_input">
                 Nome: <input id="input_nome"> 
@@ -39,7 +34,7 @@
             </div>
             <div id="form_select">
                 Personagem Favorito: 
-                <select name="personagens" id="select_personagem"> 
+                <select name="personagens" id="select-personagens"> 
                     <option value="Sonic">Sonic</option>
                     <option value="Tails">Tails</option>
                     <option value="Knuckles">Knuckles</option>
@@ -59,12 +54,8 @@
             </div>
             <button class="button-submit" onclick="cadastrar()">Cadastrar</button>
             <div class="link_auth">
-                Já tem uma conta? <a href="login.html">Faça Login</a>
+                Não tem uma conta? <a href="cadastro.html">Cadastre-se</a>
             </div>
-            <div id="div_aguardar" class="loading-div">
-                <img src="assets/circle-loading.gif" id="loading-gif">
-            </div>
-            <div id="div_erros_login"></div>
         </div>
     </div>
 </body>
@@ -75,11 +66,10 @@
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
-        var nomeVar = input_nome.value;
-        var emailVar = input_email.value;
-        var senhaVar = input_senha.value;
-        var confirmacaoSenhaVar = input_confirmar_senha.value;
-        var personagensVar = select_personagem.value;
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             cardErro.style.display = "block"

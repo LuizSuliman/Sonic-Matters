@@ -266,14 +266,12 @@ body {
 
 .close-form {
     height: 6%;
-    width: 6%;
     margin: 18px 0 0 18px;
 }
 
 .form-image {
     height: 100%;
     width: 60%;
-    z-index: -1;
     background-image: url("../assets/img/quem_e_sonic_banner.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -284,4 +282,40 @@ body {
 .form  {
     height: 100%;
     width: 40%;
+}
+
+
+/* Carregando */
+.loading-div {
+    display: none;
+}
+
+.loading-div img {
+    width: 15%;
+}
+
+#div_erros_login {
+    display: none
+}
+
+.alerta_erro{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card_erro {
+    display: none;
+    background-color: #fff;
+    color: black;
+    width: 230px;
+    position: fixed;
+    border-radius: 4px;
+    border: #FF7E7E 3px solid;
+    padding: 10px;
+    margin-right: 10%;
+}
+
+.card_erro #mensagem_erro{
+    font-weight: 500;
+    font-size: 20px;
 }

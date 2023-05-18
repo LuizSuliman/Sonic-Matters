@@ -316,6 +316,7 @@ body {
     width: 110%;
     background-color: #000000bc;
     border: 2px solid #405BE9;
+    font-size: inherit;
     border-radius: 10px;
     color: #FFFFFF;
     padding: 4%;

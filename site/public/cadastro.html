@@ -26,20 +26,21 @@
                 Cadastro
             </h1>
             <div class="form_input">
-                Nome: <input id="input_nome" placeholder="Sonic The Hedgehog"> 
+                <span>Nome:</span> <input id="input_nome" placeholder="Sonic The Hedgehog"> 
             </div>
             <div class="form_input">
-                Email: <input id="input_email" placeholder="sonic@eggnet.com"> 
+                <span>Email:</span> <input id="input_email" placeholder="sonic@eggnet.com"> 
             </div>
             <div class="form_input">
-                Senha: <input id="input_senha" placeholder="*******"> 
+                <span>Senha:</span> <input id="input_senha" placeholder="*******"> 
             </div>
             <div class="form_input">
-                Confirmar Senha: <input id="input_confirmar_senha" type="password" placeholder="*******"> 
+                <span>Confirmar Senha:</span> <input id="input_confirmar_senha" type="password" placeholder="*******"> 
             </div>
             <div class="form_input">
                 Personagem Favorito: 
                 <select name="personagens" id="select_personagem"> 
+                    <option value="" disabled selected>Selecione um Personagem:</option>
                     <option value="Sonic">Sonic</option>
                     <option value="Tails">Tails</option>
                     <option value="Knuckles">Knuckles</option>
@@ -57,7 +58,7 @@
                     <option value="Metal Sonic">Metal Sonic</option>
                 </select>
             </div>
-            <button class="button-submit" onclick="cadastrar()">Cadastrar</button>
+            <a class="button-submit" onclick="cadastrar()">Cadastrar</a>
             <div class="link_auth">
                 Já tem uma conta? <a href="login.html">Faça Login</a>
             </div>

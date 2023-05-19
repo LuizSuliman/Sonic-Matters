@@ -205,7 +205,7 @@ body {
 .home-hero-subtitle {
     color: #FFFFFF;
     padding: 1%;
-    background-color: #00000058;
+    background-color: #000000bc;
     border: 2px solid #405BE9;
     border-radius: 10px;
 }
@@ -283,7 +283,8 @@ body {
     height: 100%;
     width: 40%;
     color: #FFFFFF;
-    background-color: #000000bc;
+    /* background-image: linear-gradient(to right, transparent, #000000); */
+    background-color: #00000068;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -334,6 +335,7 @@ body {
 .link_auth {
     margin-top: 3%;
     font-size: 1.2em;
+    color: #FFFFFF;
 }
 
 .link_auth a {
@@ -391,12 +393,12 @@ body {
 
 .card_erro {
     display: none;
-    background-color: #fff;
-    color: black;
+    background-color: #FF7E7E;
+    color: #FFFFFF;
     width: 230px;
     position: fixed;
     border-radius: 4px;
-    border: #FF7E7E 3px solid;
+    border: #405BE9 3px solid;
     padding: 10px;
     margin-right: 10%;
 }
@@ -404,4 +406,12 @@ body {
 .card_erro #mensagem_erro{
     font-weight: 500;
     font-size: 20px;
+}
+
+/* BEM-VINDO */
+
+.welcome-bg {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
 }

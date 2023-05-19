@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+    <head>
+        <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bem Vindo! | Sonic Matters</title>
+    <link rel="stylesheet" href="../css/style.css">
     <script src="../js/funcoes.js"></script>
 </head>
 <body onload="validarSessao()">
-    <div class="hello">
+    <div class="header darker">
+        <div class="container">
+            <a href="../index.html">
+                <img src="../assets/img/sonic_matters_logo_white_text_eyes.png" alt="Logo" class="navbar-logo">
+            </a>
+            <div class="navbar">
+                <a href="bem_vindo.html" id="navbar-current">Bem</a>
+                <a href="quem_e_sonic.html">Quem é Sonic?</a>
+                <a href="minha_historia.html">Minha História</a>
+                <a href="#">Cronologia</a>
+            </div>
+            <div class="navbar-auth">
+                <a href="login.html" class="navbar-login">LOGIN</a>
+                <a href="cadastro.html" class="navbar-register">CADASTRO</a>
+            </div>
+        </div>
+    </div>
+    
+    <img src="../assets/img/bem_vindo_bg.png" class="welcome-bg"></img>
+    <!-- <img src="" alt="Bem vindo" class="welcome-bg"> -->
+    
+    <!-- <div class="hello">
         <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
     </div>
     <div class="btn-logout" onclick="limparSessao()">
         <h3>Sair</h3>
-    </div>
+    </div> -->
 </body>
 </html>
 <script>

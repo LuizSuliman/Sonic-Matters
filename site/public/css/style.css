@@ -22,25 +22,21 @@ body {
     display: flex;
 }
 
-/* width */
 ::-webkit-scrollbar {
     width: 10px;
 }
   
-  /* Track */
 ::-webkit-scrollbar-track {
     background: #405BE9;
 }
   
-  /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #F5ED1E;
+    background: #FF7E7E;
     border-radius: 5px;
 }
   
-  /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #FF7E7E;
+    background: #F5ED1E;
 }
 
 /* HEADER */

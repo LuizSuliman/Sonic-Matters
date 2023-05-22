@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bem Vindo! | Sonic Matters</title>
     <script src="../js/funcoes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="../assets/img/sonic_icon.png" type="image/x-icon">
 </head>
@@ -29,8 +30,192 @@
         </div>
     </div>
 
+    
+    <div class="votes">
+        <div class="container">
+            <h1>SONIC AWARDS</h1>
+            <h2>Expresse sua opinião sobre a franquia Sonic The Hedgehog através do seu voto!</h2>
+            <div class="btns-dash">
+                <!-- O gráfico é chamado de acordo com o id (fkVotacao) do banco  -->
+                <button class="btn-chart btn-pink" onclick="exibirVotacao(10)" id="btnVotacao10">Melhor Personagem</button>
+                <button class="btn-chart btn-white" onclick="exibirVotacao(11)" id="btnVotacao11">Melhor Jogo</button>
+                <button class="btn-chart btn-white" onclick="exibirVotacao(12)" id="btnVotacao12">Melhor Era</button>
+                <button class="btn-chart btn-white" onclick="exibirVotacao(13)" id="btnVotacao13">Melhor Trilha Sonora</button>
+            </div>
+            <div id="graficos">
+                <div id="grafico10" class="display-block">
+                    <div class="graph">
+                        <canvas id="myChartCanvas10"></canvas>
+                    </div>
+                </div>
+
+                <div id="grafico11" class="display-none">
+                    <div class="graph">
+                        <canvas id="myChartCanvas11"></canvas>
+                    </div>
+                </div>
+
+                <div id="grafico12" class="display-none">
+                    <div class="graph">
+                        <canvas id="myChartCanvas12"></canvas>
+                    </div>
+                </div>
+
+                <div id="grafico13" class="display-none">
+                    <div class="graph">
+                        <canvas id="myChartCanvas13"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 <script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
+    let proximaAtualizacao;
+
+    window.onload = obterDadosGraficos();
+
+    function obterDadosGraficos() {
+        obterDadosGrafico(10)
+        obterDadosGrafico(11)
+        obterDadosGrafico(12)
+        obterDadosGrafico(13)
+    }
+
+    function exibirVotacao(idVotacao) {
+        let todosOsGraficos = document.getElementById("graficos")
+
+        for (i = 10; i < (todosOsGraficos.childElementCount + 10); i++) {
+            // exibindo - ou não - o gráfico
+            let elementoAtual = document.getElementById(`grafico${i}`)
+            if (elementoAtual.classList.contains("display-block")) {
+                elementoAtual.classList.remove("display-block")
+            }
+            elementoAtual.classList.add("display-none")
+            
+            // alterando estilo do botão
+            let btnAtual = document.getElementById(`btnVotacao${i}`)
+            if (btnAtual.classList.contains("btn-pink")) {
+                btnAtual.classList.remove("btn-pink")
+            }
+            btnAtual.classList.add("btn-white")
+        }
+        
+        // exibindo - ou não - o gráfico
+        let graficoExibir = document.getElementById(`grafico${idVotacao}`)
+        graficoExibir.classList.remove("display-none")
+        graficoExibir.classList.add("display-block")
+        
+        // alterando estilo do botão
+        let btnExibir = document.getElementById(`btnVotacao${idVotacao}`)
+        btnExibir.classList.remove("btn-white")
+        btnExibir.classList.add("btn-pink")
+    }
+
+    // O gráfico é construído com três funções:
+    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
+    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
+    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
+
+    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
+    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
+    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+    function obterDadosGrafico(idVotacao) {
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch(`/votacao/ultimas/${idVotacao}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, idVotacao);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(resposta, idVotacao) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Votos',
+                data: [],
+                borderWidth: 2,
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(54, 162, 235)',
+                    'rgb(153, 102, 255)',
+                    'rgb(201, 203, 207)'
+                ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(201, 203, 207, 0.2)'
+                ],
+            }]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.escolha);
+            dados.datasets[0].data.push(registro.totalVotos);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChartCanvas${idVotacao}`),
+            config
+        );
+    }
 </script>

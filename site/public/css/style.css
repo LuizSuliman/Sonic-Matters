@@ -495,3 +495,79 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+/* SONIC AWARDS */
+
+.votes {
+    height: 100%;
+    width: 100%;
+}
+
+.votes .container {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Herdados da Web Data Viz */
+.btns-dash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+  
+.graph {
+    width: 800px;
+    height: 400px;
+    margin: auto;
+    padding-top: 10px;
+}
+  
+.tituloGraficos {
+    color: rgb(216, 216, 216);
+    display: flex;
+    justify-content: center;
+}
+  
+.btn-chart {
+    border: 0;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 15px;
+    color: #405BE9;
+    background-color: #FFFFFF;
+    margin: 5px;
+    border-radius: 3px;
+}
+  
+.btn-pink {
+    color: #FFFFFF;
+    background-color: #405BE9;
+}
+  
+.btn-#FFFFFF {
+    color: #405BE9;
+    background-color: #FFFFFF;
+}
+  
+.label-captura {
+    height: 80px;
+}
+  
+.display-none {
+    display: none;
+}
+  
+.display-flex {
+    display: flex;
+}
+  
+.display-block {
+    display: block;
+}
+  
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}

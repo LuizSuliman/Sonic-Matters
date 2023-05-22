@@ -435,6 +435,7 @@ body {
     justify-content: center;
     color: #FFFFFF;
     background-color: #405BE9;
+    border: 2px solid #FFFFFF;
     border-radius: 10px;
     display: inline-flex;
 }
@@ -480,7 +481,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    box-shadow: inset 0 0 0 1000px #00000026;
+    box-shadow: inset 0 0 0 1000px #405ce989;
 }
 
 
@@ -488,6 +489,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    color: #FFFFFF;
 }
 
 .activities {

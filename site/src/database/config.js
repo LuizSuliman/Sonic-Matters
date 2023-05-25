@@ -19,10 +19,10 @@ var sqlServerConfig = {
 
 // CONEXÃO DO MYSQL WORKBENCH (LOCAL)
 var mySqlConfig = {
-    host: "localhost",
-    database: "sonicMatters",
-    user: "root",
-    password: "luizbd",
+    host: "bqiry7ohdaa8fwywg7vp-mysql.services.clever-cloud.com",
+    database: "bqiry7ohdaa8fwywg7vp",
+    user: "uqcjd9cj1fyudgkz",
+    password: "CurjHJyVKbKDr3rIonst",
 };
 
 function executar(instrucao) {

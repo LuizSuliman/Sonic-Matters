@@ -33,38 +33,43 @@
     
     <div class="votes">
         <div class="container">
-            <h1>SONIC AWARDS</h1>
-            <h2>Expresse sua opinião sobre a franquia Sonic The Hedgehog através do seu voto!</h2>
-            <div class="btns-dash">
-                <!-- O gráfico é chamado de acordo com o id (fkVotacao) do banco  -->
-                <button class="btn-chart btn-pink" onclick="exibirVotacao(10)" id="btnVotacao10">Melhor Personagem</button>
-                <button class="btn-chart btn-white" onclick="exibirVotacao(11)" id="btnVotacao11">Melhor Jogo</button>
-                <button class="btn-chart btn-white" onclick="exibirVotacao(12)" id="btnVotacao12">Melhor Era</button>
-                <button class="btn-chart btn-white" onclick="exibirVotacao(13)" id="btnVotacao13">Melhor Trilha Sonora</button>
-            </div>
-            <div id="graficos">
-                <div id="grafico10" class="display-block">
-                    <div class="graph">
-                        <canvas id="myChartCanvas10"></canvas>
+            <div class="votes-content">
+                <h1 class="the">SONIC AWARDS</h1>
+                <h2>Expresse sua opinião sobre a franquia Sonic The Hedgehog através do seu voto!</h2>
+                <div class="btns-dash">
+                    <!-- O gráfico é chamado de acordo com o id (fkVotacao) do banco  -->
+                    <button class="btn-chart btn-blue" onclick="exibirVotacao(10)" id="btnVotacao10">Melhor Personagem</button>
+                    <button class="btn-chart btn-white" onclick="exibirVotacao(11)" id="btnVotacao11">Melhor Jogo</button>
+                    <button class="btn-chart btn-white" onclick="exibirVotacao(12)" id="btnVotacao12">Melhor Era</button>
+                    <button class="btn-chart btn-white" onclick="exibirVotacao(13)" id="btnVotacao13">Melhor Trilha Sonora</button>
+                </div>
+                <div id="graficos">
+                    <div id="grafico10" class="display-block">
+                        <div class="graph">
+                            <canvas id="myChartCanvas10"></canvas>
+                        </div>
+                    </div>
+    
+                    <div id="grafico11" class="display-none">
+                        <div class="graph">
+                            <canvas id="myChartCanvas11"></canvas>
+                        </div>
+                    </div>
+    
+                    <div id="grafico12" class="display-none">
+                        <div class="graph">
+                            <canvas id="myChartCanvas12"></canvas>
+                        </div>
+                    </div>
+    
+                    <div id="grafico13" class="display-none">
+                        <div class="graph">
+                            <canvas id="myChartCanvas13"></canvas>
+                        </div>
                     </div>
                 </div>
-
-                <div id="grafico11" class="display-none">
-                    <div class="graph">
-                        <canvas id="myChartCanvas11"></canvas>
-                    </div>
-                </div>
-
-                <div id="grafico12" class="display-none">
-                    <div class="graph">
-                        <canvas id="myChartCanvas12"></canvas>
-                    </div>
-                </div>
-
-                <div id="grafico13" class="display-none">
-                    <div class="graph">
-                        <canvas id="myChartCanvas13"></canvas>
-                    </div>
+                <div class="vote-now">
+                    <button class="btn-chart btn-blue">VOTE!</button>
                 </div>
             </div>
         </div>
@@ -98,8 +103,8 @@
             
             // alterando estilo do botão
             let btnAtual = document.getElementById(`btnVotacao${i}`)
-            if (btnAtual.classList.contains("btn-pink")) {
-                btnAtual.classList.remove("btn-pink")
+            if (btnAtual.classList.contains("btn-blue")) {
+                btnAtual.classList.remove("btn-blue")
             }
             btnAtual.classList.add("btn-white")
         }
@@ -112,7 +117,7 @@
         // alterando estilo do botão
         let btnExibir = document.getElementById(`btnVotacao${idVotacao}`)
         btnExibir.classList.remove("btn-white")
-        btnExibir.classList.add("btn-pink")
+        btnExibir.classList.add("btn-blue")
     }
 
     // O gráfico é construído com três funções:
@@ -166,27 +171,61 @@
                 label: 'Votos',
                 data: [],
                 borderWidth: 2,
-                borderColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(255, 159, 64)',
-                    'rgb(255, 205, 86)',
-                    'rgb(75, 192, 192)',
-                    'rgb(54, 162, 235)',
-                    'rgb(153, 102, 255)',
-                    'rgb(201, 203, 207)'
-                ],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                    'rgba(255, 205, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(201, 203, 207, 0.2)'
+                    'gold',
+                    'silver',
+                    'brown',
+                    'blue',
+                    'blue',
+                    'blue',
+                    'blue',
+                    'blue',
+                    'blue',
+                    'blue',
+                    'blue',
+                    'blue',
+                    'blue',
+                    'blue',
+                    'blue',
+                    'blue',
+                    'blue',
+                    'blue',
+                    'blue',
+                    'blue',
                 ],
-            }]
+                borderColor: [
+                    'black'
+                ],
+                
+            }],
         };
-
+        
+        var options = {
+            scales: {
+                x: {
+                ticks: {
+                    color: 'white', // Cor dos ticks do eixo x
+                },
+                grid: {
+                    color: 'transparent', // Cor das linhas de grade do eixo x
+                },
+                },
+                y: {
+                ticks: {
+                    color: 'white', // Cor dos ticks do eixo y
+                },
+                grid: {
+                    color: 'white', // Cor das linhas de grade do eixo y
+                },
+                },
+            },
+            plugins: {
+                legend: {
+                display: false, // Oculta a legenda
+                },
+            },
+        };
+        
         console.log('----------------------------------------------')
         console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
         console.log(resposta)
@@ -210,6 +249,7 @@
         const config = {
             type: 'bar',
             data: dados,
+            options: options
         };
 
         // Adicionando gráfico criado em div na tela

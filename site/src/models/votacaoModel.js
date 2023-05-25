@@ -15,7 +15,7 @@ function buscarUltimasMedidas(idVotacao) {
         from voto
         where fkVotacao = ${idVotacao}
         group by escolha
-        order by escolha desc;`;
+        order by totalVotos;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return

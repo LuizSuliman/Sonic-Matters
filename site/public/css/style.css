@@ -507,7 +507,7 @@ body {
     padding: 5%;
     background-color: #000000a8;
     border: 2px solid #F5ED1E;
-    border-radius: 10px;    
+    border-radius: 20px;    
 }
 
 /* SONIC AWARDS */
@@ -515,12 +515,56 @@ body {
 .votes {
     height: 100%;
     width: 100%;
+    background-image: url("../assets/img/governanca-blaze.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFFFFF;
 }
 
 .votes .container {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.votes-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1% 5%;
+    background-color: #000000a8;
+    border: 2px solid #F5ED1E;
+    border-radius: 20px;    
+}
+
+.votes-content h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.vote-now {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vote-now button {
+    color: #FFFFFF;
+    background-color: #e82323;
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+    padding-left: 50%;
+    padding-right: 50%;
+    transition: 500ms;
+}
+
+.vote-now button:hover {
+    background-color: transparent;
+    border: 2px solid #e82323;
+    color: #FFFFFF;
+    transition: 500ms;
 }
 
 /* Herdados da Web Data Viz */
@@ -532,8 +576,8 @@ body {
 }
   
 .graph {
-    width: 800px;
-    height: 400px;
+    width: 50vw;
+    height: 50vh;
     margin: auto;
     padding-top: 10px;
 }
@@ -555,7 +599,7 @@ body {
     border-radius: 3px;
 }
   
-.btn-pink {
+.btn-blue {
     color: #FFFFFF;
     background-color: #405BE9;
 }
@@ -581,7 +625,7 @@ body {
     display: block;
 }
   
-canvas {
+/* canvas {
     width: 100% !important;
     height: 100% !important;
-}
+} */

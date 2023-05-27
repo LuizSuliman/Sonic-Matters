@@ -7,4 +7,8 @@ router.get("/ultimas/:idVotacao", function (req, res) {
     votacaoController.buscarUltimasMedidas(req, res);
 });
 
+router.get("/voto/:i/:idUsuario", function (req, res) {
+    votacaoController.verificarVotoUsuario(req, res);
+});
+
 module.exports = router;

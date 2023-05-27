@@ -508,7 +508,10 @@ body {
     background-color: #405BE9;
     border: 3px solid #FFFFFF;
     border-radius: 10px;
-    color: #F5ED1E;
+    color: #FFFFFF;
+    font-size: 1.8em;
+    font-weight: 900;
+    transition: 500ms;
 }
 
 .activities a {
@@ -516,15 +519,22 @@ body {
     text-decoration: none;
 }
 
-.portal-awards {
-    font-size: 1.8em;
-    font-weight: 900;
+.portal-awards:hover {
+    border-color: #F5ED1E;
+    color: #F5ED1E;
+    background-color: #405BE9;
+    transition: 500ms;
 }
 
 .portal-quiz  {
-    font-size: 1.8em;
-    font-weight: 900;
     background-color: #8440e9 !important;
+}
+
+.portal-quiz:hover  {
+    border-color: #F5ED1E;
+    color: #F5ED1E;
+    background-color: #8440e9 !important;
+    transition: 500ms;
 }
 
 .portal-hero-content {
@@ -597,6 +607,11 @@ body {
 }
 
 /* Herdados da Web Data Viz */
+#graficos {
+    height: 50vh;
+    width: 50vw;
+}
+
 .btns-dash {
     display: flex;
     align-items: center;

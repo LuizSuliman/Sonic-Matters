@@ -1,7 +1,4 @@
-/*
-comandos para mysql - banco local - ambiente de desenvolvimento
-*/
-
+DROP DATABASE IF EXISTS sonicMatters;
 CREATE DATABASE sonicMatters;
 USE sonicMatters;
 
@@ -19,66 +16,32 @@ CREATE TABLE votacao (
 ) AUTO_INCREMENT = 10;
 
 CREATE TABLE voto (
-	idVoto INT PRIMARY KEY AUTO_INCREMENT,
+	idVoto INT AUTO_INCREMENT,
     escolha VARCHAR(45),
     fkUsuario INT,
 	CONSTRAINT fkVotoUsuario FOREIGN KEY (fkUsuario)
 		REFERENCES usuario(idUsuario),
 	fkVotacao INT,
 	CONSTRAINT fkVotoVotacao FOREIGN KEY (fkVotacao)
-		REFERENCES votacao(idVotacao)
+		REFERENCES votacao(idVotacao),
+	CONSTRAINT pkCompostaVoto PRIMARY KEY (idVoto, fkUsuario, fkVotacao)
 ) AUTO_INCREMENT = 100;
+        
+INSERT into votacao values 
+	(null, 'Melhor Personagem'),
+    (null, 'Melhor Jogo'),
+    (null, 'Melhor Era'),
+    (null, 'Melhor Trilha Sonora');
 
+DESC usuario;
+DESC votacao;
+DESC voto;
 
-/*
-DA API ORIGINAL
-comando para sql server - banco remoto - ambiente de produção
-*/
+SELECT * from usuario;
+SELECT * from votacao;
+SELECT * from voto;
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-);
-
-CREATE TABLE aviso (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT FOREIGN KEY REFERENCES usuario(id)
-);
-
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY IDENTITY(1,1),
-	descricao VARCHAR(300)
-);
-
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
-
-CREATE TABLE medida (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT FOREIGN KEY REFERENCES aquario(id)
-);
-
-/*
-comandos para criar usuário em banco de dados azure, sqlserver,
-com permissão de insert + update + delete + select
-*/
-
-CREATE USER [usuarioParaAPIWebDataViz_datawriter_datareader]
-WITH PASSWORD = '#Gf_senhaParaAPIWebDataViz',
-DEFAULT_SCHEMA = dbo;
-
-EXEC sys.sp_addrolemember @rolename = N'db_datawriter',
-@membername = N'usuarioParaAPIWebDataViz_datawriter_datareader';
-
-EXEC sys.sp_addrolemember @rolename = N'db_datareader',
-@membername = N'usuarioParaAPIWebDataViz_datawriter_datareader';
+select escolha, count(escolha) as totalVotos
+        from voto
+        where fkVotacao = 10
+        group by escolha;

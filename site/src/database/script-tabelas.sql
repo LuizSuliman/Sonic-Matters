@@ -26,7 +26,7 @@ CREATE TABLE voto (
 		REFERENCES votacao(idVotacao),
 	CONSTRAINT pkCompostaVoto PRIMARY KEY (idVoto, fkUsuario, fkVotacao)
 ) AUTO_INCREMENT = 100;
-        
+
 INSERT into votacao values 
 	(null, 'Melhor Personagem'),
     (null, 'Melhor Jogo'),
@@ -41,7 +41,45 @@ SELECT * from usuario;
 SELECT * from votacao;
 SELECT * from voto;
 
+-- SELECT DO GRAFICO (IDVOTAÇÃO 10)
 select escolha, count(escolha) as totalVotos
         from voto
         where fkVotacao = 10
         group by escolha;
+
+-- INSERTS DE VOTOS PARA REALISMO (CRIE UM USUARIO ANTES DE INSERIR!)
+INSERT INTO usuario VALUES
+	(null, 'Sage', '1', '1', 'Dr. Eggman');
+
+INSERT INTO voto VALUES
+	(null, 'Sonic', 1, 10),
+	(null, 'Sonic', 1, 10),
+	(null, 'Sonic', 1, 10),
+	(null, 'Sonic', 1, 10),
+	(null, 'Sonic', 1, 10),
+	(null, 'Tails', 1, 10),
+	(null, 'Tails', 1, 10),
+	(null, 'Tails', 1, 10),
+	(null, 'Tails', 1, 10),
+	(null, 'Knuckles', 1, 10),
+	(null, 'Knuckles', 1, 10),
+	(null, 'Knuckles', 1, 10),
+	(null, 'Amy', 1, 10),
+	(null, 'Amy', 1, 10),
+	(null, 'Sonic Frontiers', 1, 11),
+	(null, 'Sonic Frontiers', 1, 11),
+	(null, 'Sonic Frontiers', 1, 11),
+	(null, 'Sonic Frontiers', 1, 11),
+	(null, 'Sonic Frontiers', 1, 11),
+	(null, 'Sonic Mania', 1, 11),
+	(null, 'Sonic Mania', 1, 11),
+	(null, 'Sonic Mania', 1, 11),
+	(null, 'Sonic Mania', 1, 11),
+	(null, 'Sonic 2006', 1, 11),
+	(null, 'Sonic 2006', 1, 11),
+	(null, 'Sonic 2006', 1, 11),
+	(null, 'Sonic Adventure 2', 1, 11),
+	(null, 'Sonic Adventure 2', 1, 11);
+
+-- DROP DASH/ATALHOS
+-- TRUNCATE voto;

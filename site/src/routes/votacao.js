@@ -11,4 +11,8 @@ router.get("/voto/:i/:idUsuario", function (req, res) {
     votacaoController.verificarVotoUsuario(req, res);
 });
 
+router.post("/registro", function (req, res) {
+    votacaoController.registrarVotoUsuario(req, res);
+});
+
 module.exports = router;

@@ -572,7 +572,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 1% 5%;
+    padding: 1% 10%;
     background-color: #000000a8;
     border: 2px solid #F5ED1E;
     border-radius: 20px;    
@@ -604,6 +604,43 @@ body {
     border: 2px solid #e82323;
     color: #FFFFFF;
     transition: 500ms;
+}
+
+#vote-table-container-10 {
+    height: 50vh;
+    overflow-y: scroll;
+}
+
+#vote-table-container-11 {
+    height: 50vh;
+    overflow-y: scroll;
+}
+
+#vote-table-container-12 {
+    height: 50vh;
+    overflow-y: scroll;
+}
+
+#vote-table-container-13 {
+    height: 50vh;
+    overflow-y: scroll;
+}
+
+.vote-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.vote-table td {
+    width: 19.53%;
+    border: 1px solid #FFFFFF;
+    text-align: center;
+    cursor: pointer;
+}
+
+.vote-table img {
+    padding: 0 5%;
+    width: 90%;
 }
 
 /* Herdados da Web Data Viz */

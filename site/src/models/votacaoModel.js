@@ -30,7 +30,7 @@ function verificarVotoUsuario(idVotacao, idUsuario) {
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql = `select count(escolha)
+        instrucaoSql = `select escolha
                     from voto
                     where fkVotacao = ${idUsuario}
                     order by escolha desc`;
@@ -48,7 +48,18 @@ function verificarVotoUsuario(idVotacao, idUsuario) {
     return database.executar(instrucaoSql);
 }
 
+function registrarVotoUsuario(escolha, idVotacao, idUsuario) {    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucao = `
+        INSERT INTO voto (escolha, fkVotacao, fkUsuario) VALUES ('${escolha}', '${idVotacao}', '${idUsuario}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     buscarUltimasMedidas,
     verificarVotoUsuario,
+    registrarVotoUsuario,
 }

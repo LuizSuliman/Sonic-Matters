@@ -45,25 +45,369 @@
                 </div>
                 <div id="graficos">
                     <div id="grafico10" class="display-block">
-                        <div class="graph">
+                        <div id="vote-table-container-10">
+                            Clique sobre um personagem para votar:  
+                            <table class="vote-table">
+                                <tr>
+                                    <td onclick="registrarVoto('Sonic', 10)">
+                                        <img src="../assets/img/sonic_char.png" alt="Sonic">
+                                        <br>
+                                        Sonic
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/tails_char.png" alt="Tails">
+                                        <br>
+                                        Tails
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/knuckles_char.png" alt="Tails">
+                                        <br>
+                                        Knuckles
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/amy_char.png" alt="Tails">
+                                        <br>
+                                        Amy
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/blaze_char.png" alt="Tails">
+                                        <br>
+                                        Blaze
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="../assets/img/shadow_char.png" alt="Tails">
+                                        <br>
+                                        Shadow
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/silver_char.png" alt="Tails">
+                                        <br>
+                                        Silver
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/big_char.png" alt="Tails">
+                                        <br>
+                                        Big
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/cream_char.png" alt="Tails">
+                                        <br>
+                                        Cream
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/vector_char.png" alt="Tails">
+                                        <br>
+                                        Vector
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="../assets/img/sticks_char.png" alt="Tails">
+                                        <br>
+                                        Sticks
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/rouge_char.png" alt="Tails">
+                                        <br>
+                                        Rouge
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/omega_char.png" alt="Tails">
+                                        <br>
+                                        Omega
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/eggman_char.png" alt="Tails">
+                                        <br>
+                                        Dr. Eggman
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/metal_char.png" alt="Tails">
+                                        <br>
+                                        Metal Sonic
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="graph10" style="display: none;">
                             <canvas id="myChartCanvas10"></canvas>
                         </div>
                     </div>
             
                     <div id="grafico11" class="display-none">
-                        <div class="graph">
+                        <div id="vote-table-container-11">
+                            Clique sobre um personagem para votar:  
+                            <table class="vote-table">
+                                <tr>
+                                    <td onclick="registrarVoto('Sonic', 11)">
+                                        <img src="../assets/img/sonic_char.png" alt="Sonic">
+                                        <br>
+                                        Sonic
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/tails_char.png" alt="Tails">
+                                        <br>
+                                        Tails
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/knuckles_char.png" alt="Tails">
+                                        <br>
+                                        Knuckles
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/amy_char.png" alt="Tails">
+                                        <br>
+                                        Amy
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/blaze_char.png" alt="Tails">
+                                        <br>
+                                        Blaze
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="../assets/img/shadow_char.png" alt="Tails">
+                                        <br>
+                                        Shadow
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/silver_char.png" alt="Tails">
+                                        <br>
+                                        Silver
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/big_char.png" alt="Tails">
+                                        <br>
+                                        Big
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/cream_char.png" alt="Tails">
+                                        <br>
+                                        Cream
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/vector_char.png" alt="Tails">
+                                        <br>
+                                        Vector
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="../assets/img/sticks_char.png" alt="Tails">
+                                        <br>
+                                        Sticks
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/rouge_char.png" alt="Tails">
+                                        <br>
+                                        Rouge
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/omega_char.png" alt="Tails">
+                                        <br>
+                                        Omega
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/eggman_char.png" alt="Tails">
+                                        <br>
+                                        Dr. Eggman
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/metal_char.png" alt="Tails">
+                                        <br>
+                                        Metal Sonic
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="graph11" style="display: none;">
                             <canvas id="myChartCanvas11"></canvas>
                         </div>
                     </div>
             
                     <div id="grafico12" class="display-none">
-                        <div class="graph">
+                        <div id="vote-table-container-12">
+                            Clique sobre um personagem para votar:  
+                            <table class="vote-table">
+                                <tr>
+                                    <td onclick="registrarVoto('Sonic', 12)">
+                                        <img src="../assets/img/sonic_char.png" alt="Sonic">
+                                        <br>
+                                        Sonic
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/tails_char.png" alt="Tails">
+                                        <br>
+                                        Tails
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/knuckles_char.png" alt="Tails">
+                                        <br>
+                                        Knuckles
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/amy_char.png" alt="Tails">
+                                        <br>
+                                        Amy
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/blaze_char.png" alt="Tails">
+                                        <br>
+                                        Blaze
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="../assets/img/shadow_char.png" alt="Tails">
+                                        <br>
+                                        Shadow
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/silver_char.png" alt="Tails">
+                                        <br>
+                                        Silver
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/big_char.png" alt="Tails">
+                                        <br>
+                                        Big
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/cream_char.png" alt="Tails">
+                                        <br>
+                                        Cream
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/vector_char.png" alt="Tails">
+                                        <br>
+                                        Vector
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="../assets/img/sticks_char.png" alt="Tails">
+                                        <br>
+                                        Sticks
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/rouge_char.png" alt="Tails">
+                                        <br>
+                                        Rouge
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/omega_char.png" alt="Tails">
+                                        <br>
+                                        Omega
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/eggman_char.png" alt="Tails">
+                                        <br>
+                                        Dr. Eggman
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/metal_char.png" alt="Tails">
+                                        <br>
+                                        Metal Sonic
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="graph12" style="display: none;">
                             <canvas id="myChartCanvas12"></canvas>
                         </div>
                     </div>
             
                     <div id="grafico13" class="display-none">
-                        <div class="graph">
+                        <div id="vote-table-container-13">
+                            Clique sobre um personagem para votar:  
+                            <table class="vote-table">
+                                <tr>
+                                    <td onclick="registrarVoto('Sonic', 13)">
+                                        <img src="../assets/img/sonic_char.png" alt="Sonic">
+                                        <br>
+                                        Sonic
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/tails_char.png" alt="Tails">
+                                        <br>
+                                        Tails
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/knuckles_char.png" alt="Tails">
+                                        <br>
+                                        Knuckles
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/amy_char.png" alt="Tails">
+                                        <br>
+                                        Amy
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/blaze_char.png" alt="Tails">
+                                        <br>
+                                        Blaze
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="../assets/img/shadow_char.png" alt="Tails">
+                                        <br>
+                                        Shadow
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/silver_char.png" alt="Tails">
+                                        <br>
+                                        Silver
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/big_char.png" alt="Tails">
+                                        <br>
+                                        Big
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/cream_char.png" alt="Tails">
+                                        <br>
+                                        Cream
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/vector_char.png" alt="Tails">
+                                        <br>
+                                        Vector
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="../assets/img/sticks_char.png" alt="Tails">
+                                        <br>
+                                        Sticks
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/rouge_char.png" alt="Tails">
+                                        <br>
+                                        Rouge
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/omega_char.png" alt="Tails">
+                                        <br>
+                                        Omega
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/eggman_char.png" alt="Tails">
+                                        <br>
+                                        Dr. Eggman
+                                    </td>
+                                    <td>
+                                        <img src="../assets/img/metal_char.png" alt="Tails">
+                                        <br>
+                                        Metal Sonic
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="graph13" style="display: none;">
                             <canvas id="myChartCanvas13"></canvas>
                         </div>
                     </div>
@@ -75,6 +419,8 @@
 </body>
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    var meuVoto = "";
 
     let proximaAtualizacao;
     
@@ -94,6 +440,24 @@
                     console.error(`Erro na verificação do voto do usuário! ${error.message}`);
                 });
         }
+    }
+
+    function capturarVoto(idVotacao, idUsuario) {
+        fetch(`/votacao/voto/${idVotacao}/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (votoEncontrado) {
+                        meuVoto = votoEncontrado[0].escolha
+                        console.log(meuVoto);
+                    }
+                );
+            return
+            } else {
+                
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na verificação do voto do usuário! ${error.message}`);
+            });
     }
 
     function obterDadosGraficos() {
@@ -144,6 +508,8 @@
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
     function obterDadosGrafico(idVotacao) {
+        capturarVoto(idVotacao,  sessionStorage.ID_USUARIO)
+
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
         }
@@ -169,6 +535,13 @@
     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
     function plotarGrafico(resposta, idVotacao) {
+
+        let tabelaVoto = document.getElementById(`vote-table-container-${idVotacao}`)
+        tabelaVoto.style.display = 'none';
+
+        console.log(idVotacao)
+        let graficoAtual = document.getElementById(`graph${idVotacao}`)
+        graficoAtual.style.display = 'block';
 
         console.log('iniciando plotagem do gráfico...');
 
@@ -231,6 +604,16 @@
                 },
             },
             plugins: {
+                title: {
+                    display: true,
+                    text: `Você escolheu: ${meuVoto}`,
+                    font: {
+                        size: 18,
+                        weight: 'bold',
+                        family: 'Arial, sans-serif',
+                    },
+                    color: 'white',
+                },
                 legend: {
                 display: false, // Oculta a legenda
                 },
@@ -268,5 +651,33 @@
             document.getElementById(`myChartCanvas${idVotacao}`),
             config
         );
+    }
+
+    function registrarVoto(escolha, idVotacao) {
+        console.log(escolha, idVotacao);
+
+        fetch("/votacao/registro", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                escolhaServer: escolha,
+                idVotacaoServer: idVotacao,
+                idUsuarioServer: sessionStorage.ID_USUARIO,
+            })
+        }).then(function (response) {
+            if (response.ok) {
+                // capturarVoto(idVotacao, sessionStorage.ID_USUARIO);
+                obterDadosGrafico(idVotacao)
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API?');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na INSERÇÃO dos dados p/ gráfico: ${error.message}`);
+            });
     }
 </script>

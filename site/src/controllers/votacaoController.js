@@ -1,7 +1,6 @@
 var medidaModel = require("../models/votacaoModel");
 
 function buscarUltimasMedidas(req, res) {
-
     var idVotacao = req.params.idVotacao;
 
     console.log(`Recuperando os votos`);
@@ -38,7 +37,41 @@ function verificarVotoUsuario(req, res) {
     });
 }
 
+function registrarVotoUsuario(req, res) {
+    var escolha = req.body.escolhaServer;
+    var idVotacao = req.body.idVotacaoServer;
+    var idUsuario = req.body.idUsuarioServer;
+
+    // Faça as validações dos valores
+    if (escolha == undefined) {
+        res.status(400).send("Seu escolha está undefined!");
+    } else if (idVotacao == undefined) {
+        res.status(400).send("Seu idVotacao está undefined!");
+    } else if (idUsuario == undefined) {
+        res.status(400).send("Seu idUsuario está undefined!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        medidaModel.registrarVotoUsuario(escolha, idVotacao, idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     buscarUltimasMedidas,
     verificarVotoUsuario,
+    registrarVotoUsuario,
 }

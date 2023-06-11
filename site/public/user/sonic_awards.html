@@ -445,8 +445,8 @@
         }
     }
 
-    function capturarVoto(idVotacao, idUsuario) {
-        fetch(`/votacao/voto/${idVotacao}/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+    async function capturarVoto(idVotacao, idUsuario) {
+        await fetch(`/votacao/voto/${idVotacao}/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (votoEncontrado) {
                         meuVoto[idVotacao - 10] = votoEncontrado[0].escolha
@@ -510,9 +510,9 @@
 
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
-    function obterDadosGrafico(idVotacao, precisaCapturarVoto) {
+    async function obterDadosGrafico(idVotacao, precisaCapturarVoto) {
         if (precisaCapturarVoto) {
-            capturarVoto(idVotacao,  sessionStorage.ID_USUARIO)
+            await capturarVoto(idVotacao,  sessionStorage.ID_USUARIO)
         }
 
         if (proximaAtualizacao != undefined) {

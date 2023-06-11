@@ -137,6 +137,10 @@ body {
     background-color: #000000;
 }
 
+.top-border {
+    border-top: 2px solid #F5ED1E;
+}
+
 .footer .container {
     justify-content: space-between;
     align-items: center;
@@ -175,6 +179,7 @@ body {
     justify-content: space-evenly;
     border-left: 2px solid #F5ED1E;
 }
+
 
 .footer-social a {
     height: 40%;
@@ -244,7 +249,7 @@ body {
     height: 350px;
     width: 100%;
     z-index: -1;
-    background-image: url("../assets/img/quem_e_sonic_banner.png");
+    background-image: url("../assets/img/quem_e_sonic_banner.jpeg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -266,11 +271,86 @@ body {
     color: #FFFFFF;
 }
 
+.body {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-size: 1.2em;
+}
+
+.body .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.body-section {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 10px;
+    margin: 4% 0;
+}
+
+.blue-border {
+    border: 4px solid #405BE9;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.yellow-border {
+    border: 4px solid #F5ED1E;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.red-border {
+    border: 4px solid #FF7E7E;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.body-section img {
+    width: 25%;
+    margin: 0 4%;
+}
+
+.body-section img .right-img {
+    width: 25%;
+    margin-right: 5%;
+}
+
+.body-section span {
+    margin: 0 1% 0 2%;
+}
+
 /* MINHA HISTORIA */
+.banner2 {
+    height: 350px;
+    width: 100%;
+    z-index: -1;
+    background-image: url("../assets/img/minha_historia_banner.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
 
-/* LOGIN */
+.banner2 .container {
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000068;
+}
 
-/* CADASTRO */
+.text-link {
+    color: #F5ED1E;
+    
+}
+
+/* LOGIN & CADASTRO */
 
 .register {
     height: 100%;
@@ -278,7 +358,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("../assets/img/quem_e_sonic_banner.png");
+    background-image: url("../assets/img/form-bg.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

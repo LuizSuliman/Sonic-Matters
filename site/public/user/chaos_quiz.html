@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem Vindo! | Sonic Matters</title>
+    <script src="../js/funcoes.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../assets/img/sonic_icon.png" type="image/x-icon">
+</head>
+<body onload="validarSessao()">
+    <div class="header darker">
+        <div class="container">
+            <a href="../index.html">
+                <img src="../assets/img/sonic_matters_logo_white_text_eyes.png" alt="Logo" class="navbar-logo">
+            </a>
+            <div class="navbar">
+                <a href="portal.html">Portal</a>
+                <a href="sonic_awards.html">SONIC AWARDS</a>
+                <a href="chaos_quiz.html" id="navbar-current">CHAOS QUIZ</a>
+            </div>
+            <div class="navbar-profile">
+                <span id="b_usuario">usuário</span>
+                <div class="dropdown-content">
+                    <a href="../login.html" onclick="limparSessao()">Sair</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="quiz">
+        <div class="container">
+            <div class="quiz-content" id="div_quiz">
+                <h1 class="the">CHAOS QUIZ</h1>
+                <h2>Descubra com qual personagem de Sonic você mais se parece!</h2>
+                <div class="button-start-quiz" onclick="iniciar_quiz()">Iniciar Quiz</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="../assets/img/sonic_matters_logo_white_text_eyes.png" alt="Sonic Matters">
+            </div>
+            <div class="footer-copyright">
+                <span>Luíz Fernando Lemes Suliman © 2023</span>
+                <br>
+                <span>Todos os direitos reservados</span>
+            </div>
+            <div class="footer-social">
+                <a href="https://github.com/LuizSuliman">
+                    <img src="../assets/svg/footer_github_icon.svg" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/lu%C3%ADz-fernando-lemes-suliman-0a542b235/">
+                    <img src="../assets/svg/footer_linkedin_icon.svg" alt="Linkedin">
+                </a>
+                <a href="mailto:luiz.suliman@sptech.school">
+                    <img src="../assets/svg/footer_email_icon.svg" alt="E-mail">
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    var listaPerguntas = [
+        {
+            titulo: 'Acima de tudo, o que seus amigos são para você?',
+            opcao1: 'Pessoas com quem compartilhei minhas aventuras.',
+            opcao2: 'Pessoas que me ajudaram a melhorar a cada dia.',
+            opcao3: 'Pessoas em que confio plenamente.',
+            opcao4: 'Pessoas bondosas e sinceras, comigo e com os outros.'
+        },
+        {
+            titulo: 'O que você mais valoriza em um jogo?',
+            opcao1: 'Sua jogabilidade e diversão que sinto jogando.',
+            opcao2: 'A profundidade das mecânicas e a curva de aprendizado.',
+            opcao3: 'A ambição dos desenvolvedores, acima do produto final.',
+            opcao4: 'Sua visão artística, nos gráficos e na história.'
+        },
+        {
+            titulo: 'Qual das seguintes formas de entretenimento mais te atrai?',
+            opcao1: 'Jogos.',
+            opcao2: 'Livros.',
+            opcao3: 'Música.',
+            opcao4: 'Filmes/Pintura.'
+        },
+        {
+            titulo: 'Qual dos seguintes atributos você mais valoriza em alguém?',
+            opcao1: 'Resiliência, e a capacidade de seguir em frente.',
+            opcao2: 'Sabedoria, e a capacidade de agregar conhecimento para os outros.',
+            opcao3: 'Sinceridade, e a capacidade de agir de forma moral.',
+            opcao4: 'Compaixão, e a capacidade de se conectar com as pessoas.'
+        }
+    ];
+    
+    contagemPerguntas = 0;
+
+    // Atributos para o quiz:
+    var confianca = 0;
+    var inteligencia = 0;
+    var lealdade = 0;
+    var empatia = 0;
+
+    function iniciar_quiz() {
+        div_quiz.innerHTML = `
+            <h2 id="h2_titulo">Como você reage à um novo desafio?</h2>
+            <div class="quiz-choice" onclick="avançar_quiz('Confiança')">
+                1) 
+                <span id="opcao1">
+                    Não penso duas vezes: se é importante pra mim, encaro de frente.
+                </span>
+            </div>
+            <div class="quiz-choice" onclick="avançar_quiz('Inteligencia')">
+                2) 
+                <span id="opcao2">
+                    Me planejo cuidadosamente antes de enfrentá-lo.
+                </span>
+            </div>
+            <div class="quiz-choice" onclick="avançar_quiz('Lealdade')">
+                3) 
+                <span id="opcao3">
+                    Fico ansioso, mas enfrento o desafio depois de um tempo.
+                </span>
+            </div>
+            <div class="quiz-choice" onclick="avançar_quiz('Empatia')">
+                4)
+                <span id="opcao4">
+                    Se alguém importante pra mim me apoiar, encaro o desafio.
+                </span>
+            </div>
+        `;
+    };
+
+    function avançar_quiz(atributo) {
+        if (atributo == 'Confiança') {
+            confianca ++;
+        } else if (atributo == 'Inteligencia') {
+            inteligencia ++;
+        } else if (atributo == 'Lealdade') {
+            lealdade ++;
+        } else if (atributo == 'Empatia') {
+            empatia ++;
+        };
+        
+        if (contagemPerguntas >= 4) {
+            finalizarQuiz();
+        } else {
+            h2_titulo.innerHTML = listaPerguntas[contagemPerguntas].titulo;
+            opcao1.innerHTML = listaPerguntas[contagemPerguntas].opcao1;
+            opcao2.innerHTML = listaPerguntas[contagemPerguntas].opcao2;
+            opcao3.innerHTML = listaPerguntas[contagemPerguntas].opcao3;
+            opcao4.innerHTML = listaPerguntas[contagemPerguntas].opcao4;
+        };
+        contagemPerguntas ++;
+    };
+
+    function finalizarQuiz() {
+        var personagem = "";
+        var atributo = "";
+        var imagemPersonagem = "";
+
+        if (confianca > inteligencia && confianca > lealdade && confianca > empatia) {
+            personagem = "Sonic";
+            atributo = "Confiança"
+            imagemPersonagem = "sonic_char";
+        } else if (inteligencia > confianca && inteligencia > lealdade && inteligencia > empatia) {
+            personagem = "Tails";
+            atributo = "Inteligência"
+            imagemPersonagem = "tails_char";
+        } else if (lealdade > confianca && lealdade > inteligencia && lealdade > empatia) {
+            personagem = "Knuckles";
+            atributo = "Lealdade"
+            imagemPersonagem = "knuckles_char";
+        } else if (empatia > confianca && empatia > inteligencia && empatia > lealdade) {
+            personagem = "Amy Rose";
+            atributo = "Empatia"
+            imagemPersonagem = "amy_char";
+        } else {
+            // Personagem coringa, em caso de empate de atributos
+            personagem = "Blaze";
+            atributo = "Carisma";
+            imagemPersonagem = "blaze_char";
+        };
+
+        div_quiz.innerHTML = `
+            <h1>Parabéns! Você se parece com...</h2>
+                <div class="div-resultado">
+                    <div class="div-personagem">
+                        <img class="char-quiz" src="../assets/img/${imagemPersonagem}.png">
+                        <h1 class="the char">${personagem}</h1>
+                    </div>
+                <div class="div-atributo">
+                    <h2> Pois você valoriza</h3>
+                    <h1 class="the">${atributo}</h1>
+                </div>
+            </div>
+        `;
+    };
+</script>

@@ -107,7 +107,7 @@ INSERT INTO voto VALUES
 	(null, 'Sonic Frontiers', 1, 13),
 	(null, 'Sonic Frontiers', 1, 13),
 	(null, 'Sonic Frontiers', 1, 13),
-	(null, 'Sonic Frontiers', 1, 13),
+	(null, 'Sonic Frontiers', 1, 13),	
 	(null, 'Sonic Frontiers', 1, 13),
 	(null, 'Sonic Colors', 1, 13),
 	(null, 'Sonic Colors', 1, 13),

@@ -30,6 +30,12 @@ var mySqlConfig = {
     // database: "bqiry7ohdaa8fwywg7vp",
     // user: "uqcjd9cj1fyudgkz",
     // password: "CurjHJyVKbKDr3rIonst",
+
+    // SPTECH
+    // host: "127.0.0.1",
+    // database: "sonicMatters",
+    // user: "aluno",
+    // password: "sptech",
 };
 
 function executar(instrucao) {
